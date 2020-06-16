@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const path = require('path');
+
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 require('dotenv').config();
@@ -24,7 +24,7 @@ app.use(express.urlencoded(
         { extended: false }
 ));
 app.use('/api/vi/users', userRouter);
-app.use(express.static(path.join(__dirname, '')))
+
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
