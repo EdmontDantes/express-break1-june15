@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs');
 
 module.exports = {
   getAllUsers: (req, res) => {
-    User.find
+    User.find()
       .then((users) => {
         return res.status(200).json(users);
       })
@@ -82,7 +82,7 @@ module.exports = {
   },
   updateUser: (req, res) => {
     const id = req.params.id;
-    User.findById()
+    User.findById(id)
       .then((user) => {
         if (!user) {
           return res
